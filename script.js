@@ -122,7 +122,7 @@ const raceCourses = [
 ];
 
 const seasons = ["Fall", "Spring", "Summer", "Winter"];
-const weathers = ["Cloudy", "Rainy", "Sunny", "Snowy"];
+const weathers = ["Cloudy", "Rainy", "Sunny"];
 const conditions = ["Firm", "Wet"];
 
 function randomizeRace() {
@@ -132,7 +132,7 @@ function randomizeRace() {
     seasons[Math.floor(Math.random() * seasons.length)];
   const weather =
     season !== "Winter"
-      ? weathers[Math.floor(Math.random() * weathers.length - 1)]
+      ? weathers[Math.floor(Math.random() * weathers.length)]
       : "Snowy";
   const condition =
     weather !== "Rainy" && weather !== "Snowy"
