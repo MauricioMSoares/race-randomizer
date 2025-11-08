@@ -118,18 +118,26 @@ const raceCourses = [
   "Morioka 1800 m・Dirt",
   "Morioka 2000 m・Dirt",
   "Longchamp 2400 m・Turf",
-  "Santa Anita Park 2000 m・Turf"
+  "Santa Anita Park 2000 m・Turf",
 ];
 
 const seasons = ["Fall", "Spring", "Summer", "Winter"];
-const weathers = ["Cloudy", "Rainy", "Snowy", "Sunny"];
+const weathers = ["Cloudy", "Rainy", "Sunny", "Snowy"];
 const conditions = ["Firm", "Wet"];
 
 function randomizeRace() {
-  const raceCourse = raceCourses[Math.floor(Math.random() * raceCourses.length)];
-  const season = seasons[Math.floor(Math.random() * seasons.length)];
-  const weather = weathers[Math.floor(Math.random() * weathers.length)];
-  const condition = conditions[Math.floor(Math.random() * conditions.length)];
+  const raceCourse =
+    raceCourses[Math.floor(Math.random() * raceCourses.length)];
+  const season = 
+    seasons[Math.floor(Math.random() * seasons.length)];
+  const weather =
+    season !== "Winter"
+      ? weathers[Math.floor(Math.random() * weathers.length - 1)]
+      : "Snowy";
+  const condition =
+    weather !== "Rainy" && weather !== "Snowy"
+      ? conditions[Math.floor(Math.random() * conditions.length)]
+      : "Wet";
 
   const result = `
 🏁 Race Course: ${raceCourse}
@@ -142,5 +150,7 @@ function randomizeRace() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("generateBtn").addEventListener("click", randomizeRace);
+  document
+    .getElementById("generateBtn")
+    .addEventListener("click", randomizeRace);
 });
