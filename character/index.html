@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Character Randomizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="../race/index.html">Track</a>
+    <b><a href="#">Character</a></b>
+  </header>
+  <h1>Character Randomizer</h1>
+
+  <label>
+    ⭐ 3★ Characters:
+    <input type="number" id="threeStarCount" min="0">
+  </label>
+  <br>
+  <label>
+    🎁 Free Characters:
+    <input type="number" id="freeCount" min="0">
+  </label>
+  <br>
+  <button onclick="randomize()">Randomize</button>
+
+  <h2>Results</h2>
+  <div id="results"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
